@@ -4,8 +4,7 @@ A simple tool for converting images into pxt-arcade's format.
 
 ## Try it out
 
-https://riknoll.github.io/pxt-editor-extension-sample
-
+https://tinycore-hisanori.github.io/pxt-arcade-asset-tool/
 ## Build
 
 First, install Node.
