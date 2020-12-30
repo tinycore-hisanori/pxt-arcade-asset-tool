@@ -291,7 +291,7 @@ class CodePreview extends React.Component<CodePreviewProps> {
         if (!this.input) return;
 
         this.input.focus();
-        this.input.setSelectionRange(0, 9999);
+        this.input.setSelectionRange(0, 99999);
 
         try {
             const success = document.execCommand("copy");
