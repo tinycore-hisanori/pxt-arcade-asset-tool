@@ -23,8 +23,7 @@ export const defaultPalette: PaletteFile = {
 "#ffeb33",
 "#f58931",
 "#db4b3d",
-"#a63d57",
-"#36354d"        ]
+"#a63d57"       ]
     }
 }
 
