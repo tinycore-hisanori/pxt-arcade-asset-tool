@@ -9,7 +9,6 @@ export const defaultPalette: PaletteFile = {
         name: "default",
         colors: [
 "#000000",
-"#222533",
 "#6275ba",
 "#a3c0e6",
 "#fafffc",
@@ -23,7 +22,9 @@ export const defaultPalette: PaletteFile = {
 "#ffeb33",
 "#f58931",
 "#db4b3d",
-"#a63d57"       ]
+"#a63d57",
+"#36354d"
+        ]
     }
 }
 
