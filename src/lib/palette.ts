@@ -8,23 +8,23 @@ export const defaultPalette: PaletteFile = {
     parsed: {
         name: "default",
         colors: [
-            "#000000",
-            "#ffffff",
-            "#ff2121",
-            "#ff93c4",
-            "#ff8135",
-            "#fff609",
-            "#249ca3",
-            "#78dc52",
-            "#003fad",
-            "#87f2ff",
-            "#8e2ec4",
-            "#a4839f",
-            "#5c406c",
-            "#e5cdc4",
-            "#91463d",
-            "#000000"
-        ]
+"#000000",
+"#222533",
+"#6275ba",
+"#a3c0e6",
+"#fafffc",
+"#ffab7b",
+"#ff6c7a",
+"#dc435b",
+"#3f48c2",
+"#448de7",
+"#2bdb72",
+"#a7f547",
+"#ffeb33",
+"#f58931",
+"#db4b3d",
+"#a63d57",
+"#36354d"        ]
     }
 }
 
