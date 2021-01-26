@@ -8,6 +8,33 @@ export const defaultPalette: PaletteFile = {
     parsed: {
         name: "default",
         colors: [
+            "#000000",
+            "#ffffff",
+            "#ff2121",
+            "#ff93c4",
+            "#ff8135",
+            "#fff609",
+            "#249ca3",
+            "#78dc52",
+            "#003fad",
+            "#87f2ff",
+            "#8e2ec4",
+            "#a4839f",
+            "#5c406c",
+            "#e5cdc4",
+            "#91463d",
+            "#000000"        ]
+    }
+}
+
+export const paletteTaffyt16: PaletteFile = {
+    id: 2,
+    name: "__taffy16__",
+    extension: ".txt",
+    data: "",
+    parsed: {
+        name: "taffy16",
+        colors: [
 "#000000",
 "#6275ba",
 "#a3c0e6",
@@ -27,6 +54,177 @@ export const defaultPalette: PaletteFile = {
         ]
     }
 }
+
+
+export const paletteSweet16: PaletteFile = {
+    id: 3,
+    name: "__sweetie16__",
+    extension: ".txt",
+    data: "",
+    parsed: {
+        name: "sweetie16",
+        colors: [
+"#000000",
+"#5d275d",
+"#b13e53",
+"#ef7d57",
+"#ffcd75",
+"#a7f070",
+"#38b764",
+"#257179",
+"#29366f",
+"#3b5dc9",
+"#41a6f6",
+"#73eff7",
+"#f4f4f4",
+"#94b0c2",
+"#566c86",
+"#333c57"
+        ]
+    }
+}
+
+export const palettePICO8: PaletteFile = {
+    id: 4,
+    name: "__pico8__",
+    extension: ".txt",
+    data: "",
+    parsed: {
+        name: "pico8",
+        colors: [
+"#000000",
+"#1D2B53",
+"#7E2553",
+"#008751",
+"#AB5236",
+"#5F574F",
+"#C2C3C7",
+"#FFF1E8",
+"#FF004D",
+"#FFA300",
+"#FFEC27",
+"#00E436",
+"#29ADFF",
+"#83769C",
+"#FF77A8",
+"#FFCCAA"
+        ]
+    }
+}
+
+export const paletteStreamOct: PaletteFile = {
+    id: 5,
+    name: "__stoct__",
+    extension: ".txt",
+    data: "",
+    parsed: {
+        name: "stoct",
+        colors: [
+"#000000",
+"#3a604a",
+"#4f7754",
+"#a19f7c",
+"#77744f",
+"#775c4f",
+"#603b3a",
+"#3b2137",
+"#170e19",
+"#2f213b",
+"#433a60",
+"#4f5277",
+"#65738c",
+"#7c94a1",
+"#a0b9ba",
+"#c0d1cc"
+        ]
+    }
+}
+
+export const paletteNA16: PaletteFile = {
+    id: 6,
+    name: "__na16__",
+    extension: ".txt",
+    data: "",
+    parsed: {
+        name: "na16",
+        colors: [
+"#000000",
+"#584563",
+"#3e2137",
+"#9a6348",
+"#d79b7d",
+"#f5edba",
+"#c0c741",
+"#647d34",
+"#e4943a",
+"#9d303b",
+"#d26471",
+"#70377f",
+"#7ec4c1",
+"#34859d",
+"#17434b",
+"#1f0e1c"
+        ]
+    }
+}
+
+export const paletteEROGE: PaletteFile = {
+    id: 7,
+    name: "__eroge__",
+    extension: ".txt",
+    data: "",
+    parsed: {
+        name: "eroge",
+        colors: [
+"#000000",
+"#4f2b24",
+"#825b31",
+"#c59154",
+"#f0bd77",
+"#fbdf9b",
+"#fff9e4",
+"#bebbb2",
+"#7bb24e",
+"#74adbb",
+"#4180a0",
+"#32535f",
+"#2a2349",
+"#7d3840",
+"#c16c5b",
+"#e89973"
+         ]
+    }
+}
+
+
+export const paletteFANTA16: PaletteFile = {
+    id: 8,
+    name: "__eroge__",
+    extension: ".txt",
+    data: "",
+    parsed: {
+        name: "fantasy16",
+        colors: [
+"#000000",
+"#513a18",
+"#332710",
+"#14130c",
+"#461820",
+"#a63c1e",
+"#d37b1e",
+"#e7bc4f",
+"#eeeefa",
+"#d9d55b",
+"#757320",
+"#14210f",
+"#040405",
+"#1c1b2f",
+"#435063",
+"#60a18f"
+         ]
+    }
+}
+
 
 const supportedTypes = [".gpl", ".txt", ".hex"];
 
@@ -49,6 +247,9 @@ export function parsePaletteFile(file: SourceFile): PaletteInfo {
         case ".txt":
             res = parseTXT(text);
             break;
+        case ".json":
+            res = parseJSON(text);
+            break;
     }
 
     if (!res.name) {
@@ -56,6 +257,34 @@ export function parsePaletteFile(file: SourceFile): PaletteInfo {
     }
 
     return res;
+}
+
+export function parseJSON(text: string) :PaletteInfo{
+let  name = "test";
+
+const colors: string[]  = [
+"#000000",
+"#6275ba",
+"#a3c0e6",
+"#fafffc",
+"#ffab7b",
+"#ff6c7a",
+"#dc435b",
+"#3f48c2",
+"#448de7",
+"#2bdb72",
+"#a7f547",
+"#ffeb33",
+"#f58931",
+"#db4b3d",
+"#a63d57",
+"#36354d"
+        ];
+
+return {
+	name,
+        colors
+	}
 }
 
 export function parseGPL(text: string): PaletteInfo {

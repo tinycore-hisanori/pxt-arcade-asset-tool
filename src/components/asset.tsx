@@ -63,12 +63,39 @@ export class FileInfo extends React.Component<FileInfoProps, FileInfoState> {
         let selectedPalette = palette.defaultPalette;
         const paletteName = this.builder.state.palette;
 
-        if (paletteName && paletteName != "__default__") {
-            const id = parseInt(paletteName.substr(paletteName.lastIndexOf("_") + 1));
-            for (const f of workspace.allPalettes()) {
-                if (f.id === id) selectedPalette = f;
-            }
+        if (paletteName && paletteName == "__default__") {
+        	selectedPalette = palette.defaultPalette;
         }
+        else if (paletteName && paletteName == "__taffy16__") {
+        	selectedPalette = palette.paletteTaffyt16;
+        }
+        else if (paletteName && paletteName == "__sweetie16__") {
+        	selectedPalette = palette.paletteSweet16;
+        }
+        else if (paletteName && paletteName == "__pico8__") {
+        	selectedPalette = palette.palettePICO8;
+        }
+		else if (paletteName && paletteName == "__stoct__") {
+        	selectedPalette = palette.paletteStreamOct;
+        }
+		else if (paletteName && paletteName == "__na16__") {
+        	selectedPalette = palette.paletteNA16;
+        }                
+		else if (paletteName && paletteName == "__eroge__") {
+        	selectedPalette = palette.paletteEROGE;
+        }   
+		else if (paletteName && paletteName == "__fantasy16__") {
+        	selectedPalette = palette.paletteFANTA16;
+        }
+        else {
+	        if (paletteName && paletteName != "__default__") {
+    	        const id = parseInt(paletteName.substr(paletteName.lastIndexOf("_") + 1));
+        	    for (const f of workspace.allPalettes()) {
+            	    if (f.id === id) selectedPalette = f;
+            	}
+        	}
+        }
+        
 
 
         if (this.builder.state.isSpriteSheet) {
@@ -253,6 +280,47 @@ function getPaletteOptions() {
         text: "default",
         value: "__default__"
     });
+
+    options.push({
+        key: "__taffy16__",
+        text: "taffy16",
+        value: "__taffy16__"
+    });
+
+    options.push({
+        key: "__sweetie16__",
+        text: "sweetie16",
+        value: "__sweetie16__"
+    });
+
+    options.push({
+        key: "__pico8__",
+        text: "PICO-8",
+        value: "__pico8__"
+    });
+
+    options.push({
+        key: "__stoct__",
+        text: "Steam Lords",
+        value: "__stoct__"
+    });
+    options.push({
+        key: "__na16__",
+        text: "na16",
+        value: "__na16__"
+    });
+    options.push({
+        key: "__eroge__",
+        text: "eroge copper",
+        value: "__eroge__"
+    });
+    options.push({
+        key: "__fantasy16__",
+        text: "fantasy 16",
+        value: "__fantasy16__"
+    });
+    
+    
 
     workspace.allPalettes().forEach(p => {
         options.push({
